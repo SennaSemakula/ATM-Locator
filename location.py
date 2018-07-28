@@ -8,10 +8,20 @@ class Location():
 		self.longitude = longitude
 
 	def set_latitude(self, latitude):
-		self.latitude = latitude
+		try:
+			val = input(latitude)
+		except: 
+			print("Please insert an integer for latitude!")	
+		else:
+			self.latitude = latitude
 
 	def set_longitude(self, longitude):
-		self.longitude = longitude
+		try:
+			val = input(longitude)
+		except: 
+			print("Please insert an integer for longitude!")	
+		else:
+			self.longitude = longitude
 
 	def set_sea_level(self, level):
 		self.sea_level = level
