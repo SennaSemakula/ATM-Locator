@@ -9,18 +9,19 @@ class Locator():
 		self.location = location
 		self.first_code = ''
 		self.second_code = ''
+		self.post_code = ''
 
 
 	def prompt_location(self):
 		self.first_code = input("Enter first part of your post code: ")
 		self.second_code = input("Enter second part of your post code: ")
 
-		postcode = first + second
+		self.postcode = self.first_code + self.second_code
 
-		return post_code
+		return self.post_code
 
 
-	def find_location (self, post_code):
+	def find_location(self, post_code):
 		post_code = self.prompt_location()
 
 		#Look up post code from a list of API's
@@ -29,6 +30,10 @@ class Locator():
 		response = request.get(url)
 
 		data = response.json()
+
+test_locator = Locator('test')
+post_code = test_locator.prompt_location()
+test_locator.find_location(post_code)
 
 
 
