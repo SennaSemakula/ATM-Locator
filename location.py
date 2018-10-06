@@ -1,15 +1,16 @@
 #Class that stores all the location details of an ATM
 class Location():
 
-	def __init__(self, country, city, latitude, longitude, sea_level):
+	def __init__(self, country, city):
 		self.country = country.title()
 		self.city = city.title()
-		self.latitude = latitude
-		self.longitude = longitude
+		self.latitude = 0
+		self.longitude = 0
+		self.sea_level = 0
 
 	def set_latitude(self, latitude):
 		try:
-			val = input(latitude)
+			val = int(latitude)
 		except: 
 			print("Please insert an integer for latitude!")	
 		else:
@@ -17,7 +18,7 @@ class Location():
 
 	def set_longitude(self, longitude):
 		try:
-			val = input(longitude)
+			val = int(longitude)
 		except: 
 			print("Please insert an integer for longitude!")	
 		else:
@@ -37,5 +38,8 @@ class Location():
 
 	def return_longitude(self):
 		return self.longitude
+
+	def return_sea_level(self):
+		return self.sea_level
 
 
